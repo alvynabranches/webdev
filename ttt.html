@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic-Tac-Toe</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            align-items: center;
+        }
+
+        tr {
+            width: 100px;
+            border: 1px solid black;
+        }
+
+        td {
+            width: 100px;
+            height: 100px;
+        }
+
+        button {
+            width: 100%;
+            height: 100%;
+            background-color: #fff;
+            border-color: #fff;
+        }
+    </style>
+    <script>
+        let first = true;
+        let X_score = 0;
+        let O_score = 0;
+
+        let showScore = () => {
+            document.getElementById("X_score").innerHTML = X_score;
+            document.getElementById("O_score").innerHTML = O_score;
+        }
+        function resetBoard() {
+            document.getElementById("11").innerHTML = "";
+            document.getElementById("12").innerHTML = "";
+            document.getElementById("13").innerHTML = "";
+            document.getElementById("21").innerHTML = "";
+            document.getElementById("22").innerHTML = "";
+            document.getElementById("23").innerHTML = "";
+            document.getElementById("31").innerHTML = "";
+            document.getElementById("32").innerHTML = "";
+            document.getElementById("33").innerHTML = "";
+            first = true;
+        }
+        window.addEventListener("DOMContentLoaded", () => {
+            buttons = document.getElementsByTagName("button");
+            showScore();
+            for (let i = 0; i < buttons.length; i++) {
+                buttons[i].onclick = function () {
+                    if (buttons[i].innerHTML == "") {
+                        if (first) {
+                            buttons[i].innerHTML = "X";
+                            first = false;
+                        }
+                        else {
+                            buttons[i].innerHTML = "O";
+                            first = true;
+                        }
+                    }
+                    else {
+                        alert("Please enter in empty block");
+                    }
+                    let b11 = document.getElementById("11").innerHTML;
+                    let b12 = document.getElementById("12").innerHTML;
+                    let b13 = document.getElementById("13").innerHTML;
+                    let b21 = document.getElementById("21").innerHTML;
+                    let b22 = document.getElementById("22").innerHTML;
+                    let b23 = document.getElementById("23").innerHTML;
+                    let b31 = document.getElementById("31").innerHTML;
+                    let b32 = document.getElementById("32").innerHTML;
+                    let b33 = document.getElementById("33").innerHTML;
+                    let check = (code, val1, val2, val3) => {
+                        if (val1 == code && val2 == code && val3 == code)
+                            return true;
+                        else
+                            return false;
+                    }
+                    if (check("X", b11, b12, b13)) {
+                        X_score += 1;
+                        resetBoard();
+                    }
+                    else if (check("O", b11, b12, b13)) {
+                        O_score += 1;
+                        resetBoard();
+                    }
+
+                    else if (check("X", b11, b21, b31)) {
+                        X_score += 1;
+                        resetBoard();
+                    }
+                    else if (check("O", b11, b21, b31)) {
+                        O_score += 1;
+                        resetBoard();
+                    }
+
+                    else if (check("X", b12, b22, b32)) {
+                        X_score += 1;
+                        resetBoard();
+                    }
+                    else if (check("O", b12, b22, b32)) {
+                        O_score += 1;
+                        resetBoard();
+                    }
+
+                    else if (check("X", b13, b23, b33)) {
+                        X_score += 1;
+                        resetBoard();
+                    }
+                    else if (check("O", b13, b23, b33)) {
+                        O_score += 1;
+                        resetBoard();
+                    }
+
+                    else if (check("X", b21, b22, b23)) {
+                        X_score += 1;
+                        resetBoard();
+                    }
+                    else if (check("O", b21, b22, b23)) {
+                        O_score += 1;
+                        resetBoard();
+                    }
+
+                    else if (check("X", b31, b32, b33)) {
+                        X_score += 1;
+                        resetBoard();
+                    }
+                    else if (check("O", b21, b22, b23)) {
+                        O_score += 1;
+                        resetBoard();
+                    }
+
+                    else if (check("X", b11, b22, b33)) {
+                        X_score += 1;
+                        resetBoard();
+                    }
+                    else if (check("O", b11, b22, b33)) {
+                        O_score += 1;
+                        resetBoard();
+                    }
+
+                    else if (check("X", b13, b22, b31)) {
+                        X_score += 1;
+                        resetBoard();
+                    }
+                    else if (check("O", b13, b22, b31)) {
+                        O_score += 1;
+                        resetBoard();
+                    }
+
+                    else if (b11 != "" && b12 != "" && b13 != "" && b21 != "" && b22 != "" && b23 != "" && b31 != "" && b32 != "" && b33 != "") {
+                        X_score += 1;
+                        O_score += 1;
+                        resetBoard();
+                    }
+                    showScore();
+                }
+            }
+
+
+        })
+    </script>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <td><button id="11"></button></td>
+            <td><button id="12"></button></td>
+            <td><button id="13"></button></td>
+        </tr>
+        <tr>
+            <td><button id="21"></button></td>
+            <td><button id="22"></button></td>
+            <td><button id="23"></button></td>
+        </tr>
+        <tr>
+            <td><button id="31"></button></td>
+            <td><button id="32"></button></td>
+            <td><button id="33"></button></td>
+        </tr>
+    </table>
+    <br><br>
+    <table>
+        <tr>
+            <th>X_score</th>
+            <th>O_score</th>
+        </tr>
+        <tr>
+            <td id="X_score"></td>
+            <td id="O_score"></td>
+        </tr>
+    </table>
+</body>
+
+</html>

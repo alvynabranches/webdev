@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button Color Change</title>
+    <style>
+        #container {
+            border: 1px solid #000;
+            height: 100px;
+            width: 100px;
+        }
+    </style>
+    <script>
+        window.addEventListener("DOMContentLoaded", () => {
+            let changeColor = (color) => {
+                document.getElementById("container").style.backgroundColor = color;
+            }
+            let container = document.getElementById("container");
+            let blueBtn = document.getElementById("blue");
+            let redBtn = document.getElementById("red");
+            let greenBtn = document.getElementById("green");
+            let yellowBtn = document.getElementById("yellow");
+            let orangeBtn = document.getElementById("orange");
+            let resetBtn = document.getElementById("reset");
+            blueBtn.style.backgroundColor = "blue";
+            redBtn.style.backgroundColor = "red";
+            greenBtn.style.backgroundColor = "green";
+            yellowBtn.style.backgroundColor = "yellow";
+            orangeBtn.style.backgroundColor = "orange";
+            blueBtn.addEventListener("click", () => changeColor("blue"));
+            redBtn.addEventListener("click", () => changeColor("red"));
+            greenBtn.addEventListener("click", () => changeColor("green"));
+            yellowBtn.addEventListener("click", () => changeColor("yellow"));
+            orangeBtn.addEventListener("click", () => changeColor("orange"));
+            resetBtn.addEventListener("click", () => changeColor("white"));
+        });
+        let validateUserName = () => {
+            let userNameElement = document.getElementById("username");
+            const criteria = {
+                hasLower: /[a-z]/.test(userNameElement.value),
+                hasUpper: /[A-Z]/.test(userNameElement.value),
+                hasDigit: /\d/.test(userNameElement.value)
+            }
+            if (Object.values(criteria).every(Boolean) && userNameElement.value.length > 8) {
+                userNameElement.style.borderColor = "green";
+                userNameElement.style.borderWidth = "10px";
+            } else {
+                userNameElement.style.borderColor = "red";
+                userNameElement.style.borderWidth = "10px";
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div id="container"></div>
+    <button id="blue">Blue</button>
+    <button id="red">Red</button>
+    <button id="green">Green</button>
+    <button id="yellow">Yellow</button>
+    <button id="orange">Orange</button>
+    <button id="reset">Reset</button>
+
+    <form action="">
+        <input type="text" name="username" id="username" oninput="validateUserName()">
+    </form>
+</body>
+
+</html>

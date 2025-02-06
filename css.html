@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Styling</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <form action="#">
+        <div class="container mb-3">
+            <label for="firstname">First Name</label>
+            <input type="text" name="firstname" id="firstname" class="form-control">
+        </div>
+        <div class="container mb-3">
+            <label for="lastname">Last Name</label>
+            <input type="text" name="lastname" id="lastname" class="form-control">
+        </div>
+        <div class="container mb-3">
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" class="form-control">
+        </div>
+        <div class="container mb-3">
+            <label for="phone">Phone</label>
+            <input type="tel" name="phone" id="phone" pattern="[7-9]{1}[0-9]{9}" class="form-control">
+        </div>
+        <div class="container mb-3">
+            <label for="gender">Gender</label>
+            <div class="form-check form-check-inline">
+                <input type="radio" name="gender" id="male" value="male" class="form-check-input">
+                <label for="male">Male</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input type="radio" name="gender" id="female" value="female" class="form-check-input">
+                <label for="female">Female</label>
+            </div>
+        </div>
+        <div class="container mb-3">
+            <label for="Programming Languages Known">Programming Languages Known</label>
+            <div class="form-check form-check-inline">
+                <input type="checkbox" value="java" id="java" name="pl" class="form-check-input">
+                <label for="java" class="form-check-label">Java</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input type="checkbox" value="python" id="python" name="pl" class="form-check-input">
+                <label for="python" class="form-check-label">Python</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input type="checkbox" value="javascript" id="javascript" name="pl" class="form-check-input">
+                <label for="javascript" class="form-check-label">JavaScript</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input type="checkbox" value="c++" id="c++" name="pl" class="form-check-input">
+                <label for="c++" class="form-check-label">C++</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input type="checkbox" value="ruby" id="ruby" name="pl" class="form-check-input">
+                <label for="ruby" class="form-check-label">Ruby</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input type="checkbox" value="go" id="go" name="pl" class="form-check-input">
+                <label for="go" class="form-check-label">Go</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input type="checkbox" value="swift" id="swift" name="pl" class="form-check-input">
+                <label for="swift" class="form-check-label">Swift</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input type="checkbox" value="kotlin" id="kotlin" name="pl" class="form-check-input">
+                <label for="kotlin" class="form-check-label">Kotlin</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input type="checkbox" value="rust" id="rust" name="pl" class="form-check-input">
+                <label for="rust" class="form-check-label">Rust</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input type="checkbox" value="perl" id="perl" name="pl" class="form-check-input">
+                <label for="perl" class="form-check-label">Perl</label>
+                <div class="form-check form-check-inline">
+                    <input type="checkbox" value="haskell" id="haskell" name="pl" class="form-check-input">
+                    <label for="haskell" class="form-check-label">Haskell</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input type="checkbox" value="nim" id="nim" name="pl" class="form-check-input">
+                    <label for="nim" class="form-check-label">Nim</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input type="checkbox" value="scala" id="scala" name="pl" class="form-check-input">
+                    <label for="scala" class="form-check-label">Scala</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input type="checkbox" value="pascal" id="pascal" name="pl" class="form-check-input">
+                    <label for="pascal" class="form-check-label">Pascal</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input type="checkbox" value="delphi" id="delphi" name="pl" class="form-check-input">
+                    <label for="delphi" class="form-check-label">Delphi</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input type="checkbox" value="prolog" id="prolog" name="pl" class="form-check-input">
+                    <label for="prolog" class="form-check-label">Prolog</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input type="checkbox" value="cobol" id="cobol" name="pl" class="form-check-input">
+                    <label for="cobol" class="form-check-label">COBOL</label>
+                </div>
+            </div>
+            <div class="container mb-3">
+                <label for="photo" class="form-label">Photo</label>
+                <input type="file" name="photo" id="photo" class="form-control">
+            </div>
+        </div>
+    </form>
+</body>
+
+</html>

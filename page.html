@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Side Scripting</title>
+    <script src="script.js"></script>
+    <script>
+        let passwordOnBlur = () => {
+            const password = document.getElementById("password").value;
+            const hasLower = /[a-z]/.test(password);
+            const hasUpper = /[A-Z]/.test(password);
+            const hasDigit = /\d/.test(password);
+            const hasSpecial = /[!@#$%^&*()_+{}\[\]:;<>,.?/~-]/.test(password);
+            if (hasLower && hasUpper & hasDigit && hasSpecial) {
+                document.getElementById("passwordError").innerHTML = "Valid password";
+                console.log(password);
+            }
+            else {
+                document.getElementById("passwordError").innerHTML = "Invalid password";
+            }
+        }
+        let validatePassword = () => {
+            const password = document.getElementById("password").value;
+            const criteria = {
+                hasLower: /[a-z]/.test(password),
+                hasUpper: /[A-Z]/.test(password),
+                hasDigit: /\d/.test(password),
+                hasSpecial: /[!@#$%^&*()_+{}\[\]:;<>,.?/~-]/.test(password)
+            }
+            if (Object.values(criteria).every(Boolean)) {
+                document.getElementById("passwordError").innerHTML = "Valid password";
+                console.log(password);
+            }
+            else {
+                document.getElementById("passwordError").innerHTML = "Invalid password";
+            }
+        }
+        let usernameLength = () => {
+            let username = document.getElementById("username").value;
+            document.getElementById("usernameCount").innerHTML = username.length;
+        }
+        let mouseover = () => {
+            document.getElementById("username").style.borderColor = "darkblue";
+        }
+        let mouseout = () => {
+            document.getElementById("username").style.borderColor = "darkgray";
+        }
+        window.addEventListener("load", () => {
+            let element = document.getElementById("sentence");
+            console.log(element.innerHTML);
+            document.getElementById("username").addEventListener("blur", () => {
+                let username = document.getElementById("username").value;
+                if (username.length < 3) {
+                    document.getElementById("usernameError").innerHTML = "Invalid username";
+                    console.error("Invalid username");
+                }
+                else {
+                    document.getElementById("usernameError").innerHTML = "Valid username";
+                    console.log(username);
+                }
+            });
+            document.getElementById("username").addEventListener("focus", usernameLength);
+            document.getElementById("username").addEventListener("input", usernameLength);
+            document.getElementById("username").addEventListener("focus", usernameLength);
+            document.getElementById("password").addEventListener("blur", validatePassword);
+            document.getElementById("password").addEventListener("input", () => {
+                const password = document.getElementById("password").value;
+                const criteria = {
+                    hasLower: /[a-z]/.test(password),
+                    hasUpper: /[A-Z]/.test(password),
+                    hasDigit: /\d/.test(password),
+                    hasSpecial: /[!@#$%^&*()_+{}\[\]:;<>,.?/~-]/.test(password)
+                }
+                if (Object.values(criteria).every(Boolean) && password.length > 12) {
+                    document.getElementById("password").style.borderColor = "green";
+                    document.getElementById("password").style.backgroundColor = "green";
+                    document.getElementById("password").style.borderWidth = "5px";
+                }
+                else {
+                    document.getElementById("password").style.borderColor = "red";
+                    document.getElementById("password").style.backgroundColor = "red";
+                    document.getElementById("password").style.borderWidth = "5px";
+                }
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <p id="sentence" class="sentence">This is a sentence.</p>
+    <p id="paragraph" class="paragraph">Hello India.</p>
+    <button id="click" class="click" onclick="buttonOnClick()">Click Me</button>
+
+    <form action="">
+        <label for="username">UserName</label>
+        <input type="text" name="username" id="username"><br>
+        <div id="usernameCount"></div><br>
+        <div id="usernameError" class="usernameError"></div><br><br>
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password"><br>
+        <div id="passwordError" class="passwordError"></div>
+    </form>
+</body>
+
+</html>

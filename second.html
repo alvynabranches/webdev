@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Second Page</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: center;
+        }
+
+        th {
+            background-color: lightgray;
+        }
+    </style>
+</head>
+
+<body>
+    <p>This is the &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b class="text">second</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        page.</p>
+    <table border="1">
+        <tr>
+            <td rowspan="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+            <td colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+        </tr>
+        <tr>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+        </tr>
+        <tr>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+        </tr>
+    </table>
+    <br><br><br>
+    <table border="1">
+        <tr>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+        <tr>
+            <td></td>
+            <td colspan="2"></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td rowspan="2"></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td rowspan="2" colspan="2"></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+    <br><br><br>
+    <img src="IMG_20200321_135504_11zon.jpg" alt="Image" width="75px" height="50px">
+    <br><br><br>
+    <form>
+        <fieldset>
+            <legend>Personal Details</legend>
+            <div>
+                <legend>Name</legend>
+                <input type="text" required>
+            </div>
+            <div>
+                <legend>Gender</legend>
+                <input type="radio" name="male" id="gender">Male<br>
+                <input type="radio" name="female" id="gender">Female
+            </div>
+        </fieldset>
+        <div>
+            <legend>Sports</legend>
+            <input type="checkbox" name="cricket" id="sports">Cricket<br>
+            <input type="checkbox" name="Kabaddi" id="sports">Kabaddi<br>
+            <input type="checkbox" name="Chess" id="sports">Chess
+        </div>
+        <div>
+            <legend>Class</legend>
+            <select name="class" id="class">
+                <option value="fybca a">FYBCA A</option>
+                <option value="fybca b">FYBCA B</option>
+                <option value="sybca a">SYBCA A</option>
+                <option value="sybca b">SYBCA B</option>
+                <option value="tybca a">TYBCA A</option>
+                <option value="tybca b">TYBCA B</option>
+            </select>
+        </div>
+        <div>
+            <legend>Message</legend>
+            <textarea name="message" id="message">Write a message here.</textarea>
+        </div>
+        <div>
+            <legend>DOB</legend>
+            <input type="date" name="date" id="date" class="date">
+            <input type="datetime-local" name="datetime" id="datetime">
+            <input type="time" name="time" id="time">
+        </div>
+        <div>
+            <legend>Photo</legend>
+            <input type="file" name="pic" id="pic">
+        </div>
+        <div>
+            <legend>Email</legend>
+            <input type="email" name="email" id="email">
+        </div>
+        <div>
+            <legend>Password</legend>
+            <input type="password" name="password" id="password">
+        </div>
+        <button type="button" onclick="alert('Hello World');">Message</button>
+        <button type="submit">Submit</button>
+        <button type="reset">Reset</button>
+    </form>
+</body>
+
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookies</title>
+    <script>
+        // Set cookies
+        document.cookie = "username=John; expires=" + new Date(Date.now() + 10 * 60 * 1000).toUTCString() + "; path=/";
+        
+        // Get cookies
+        const cookies = document.cookie.split(';').reduce((acc, cookie) => {
+            const [key, val] = cookie.trim().split('=');
+            acc[key] = val;
+            return acc;
+        }, {});
+        console.log('Username:', cookies.username);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

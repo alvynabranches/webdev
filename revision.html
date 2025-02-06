@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ISA-1</title>
+    <style>
+        input[type="text"], input[type="password"] {
+            width: 250px;
+        }
+    </style>
+    <script>
+        let validatePhone = (phone) => {
+
+            if (/[a-zA-Z]/.test(phone.value) && phone.value.length != 10) {
+                phone.style.border = "1px solid red";
+                phone.style.background = "red";
+            } else {
+                phone.style.border = "1px solid green";
+                phone.style.backgroundColor = "green";
+            }
+        };
+        window.addEventListener("DOMContentLoaded", () => {
+            let submitButton = document.getElementById("submit");
+            let phone = document.getElementById("phone");
+            submitButton.addEventListener("click", () => {
+                validatePhone(phone);
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <form>
+        <table>
+            <tr>
+                <td><label for="name">Name</label></td>
+                <td><input type="text" name="name" id="name"></td>
+            </tr>
+            <tr>
+                <td><label for="phone">Phone</label></td>
+                <td><input type="text" name="phone" id="phone"></td>
+            </tr>
+            <tr>
+                <td><label for="username">Username</label></td>
+                <td><input type="text" name="username" id="username"></td>
+            </tr>
+            <tr>
+                <td><label for="password">Password</label></td>
+                <td><input type="password" name="password" id="password"></td>
+            </tr>
+            <tr>
+                <td><label for="confirmPassword">Confirm Password</label></td>
+                <td><input type="password" name="confirmPassword" id="confirmPassword"></td>
+            </tr>
+            <tr>
+                <td colspan="2"><button id="submit" type="submit">Submit</button></td>
+            </tr>
+        </table>
+    </form>
+</body>
+
+</html>
