@@ -1,0 +1,32 @@
+services:
+  db:
+    image: mysql:lts
+    environment:
+      MYSQL_ROOT_PASSWORD: pwd
+      MYSQL_DATABASE: db
+      MYSQL_USER: alvyn
+      MYSQL_PASSWORD: pass
+    ports:
+      - 3306:3306
+  web:
+    build: .
+    depends_on:
+      - db
+    volumes:
+      - ./php:/var/www/html
+    ports:
+      - 8000:80
+    stdin_open: true
+    tty: true
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    ports:
+      - 9000:80
+    environment:
+      PMA_ARBITRARY: 1
+      PMA_HOST: db
+      PMA_USER: alvyn
+      PMA_PASSWORD: pass
+      PMA_ROOT_PASSWORD: pwd
+    depends_on:
+      - db
