@@ -75,7 +75,7 @@
     if (!empty($_POST["username"]) && !empty($_POST["password"])) {
         $un = $_POST["username"];
         $pw = password_hash($_POST["password"], PASSWORD_DEFAULT);
-        // $con->query("INSERT INTO users (username, password) VALUES (\"" . $un . "\", \""     . $pw . "\");");
+        $con->query("INSERT INTO users (username, password) VALUES (\"" . $un . "\", \""     . $pw . "\");");
         $result = $con->query("SELECT * FROM users WHERE username=\"" . $un . "\";");
         if ($result->num_rows == 1) {
             while ($row = $result->fetch_assoc()) {
